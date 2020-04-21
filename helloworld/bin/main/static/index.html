@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>계산기</title>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <form method="get" action="/add">
+            <input type="text" name="param1">
+            <input type="text" name="param2">
+            <input type="submit" name="calculate" value="+">
+        </form>
+
+        <form method="get" action="/sub">
+            <input type="text" name="param1">
+            <input type="text" name="param2">
+            <input type="submit" name="calculate" value="-">
+        </form>
+
+        <form method="get" action="/mul">
+            <input type="text" name="param1">
+            <input type="text" name="param2">
+            <input type="submit" name="calculate" value="*">
+        </form>
+
+        <form method="get" action="/div">
+            <input type="text" name="param1">
+            <input type="text" name="param2">
+            <input type="submit" name="calculate" value="/">
+        </form>
+        
+        <br>
+        <input type="text" id="param1">
+        <input type="text" id="param2">
+        <button onclick="add()">+</button>
+        <button onclick="subtract()">-</button>
+        <button onclick="multiply()">*</button>
+        <button onclick="divide()">/</button>
+
+        <script>
+            function add()
+            {
+                let param1 = $("#param1").val();
+                let param2 = $("#param2").val();
+                location.href = "add1/" + param1 + "/" + param2;
+            }
+
+            function subtract()
+            {
+                let param1 = $("#param1").val();
+                let param2 = $("#param2").val();
+                location.href = "sub1/" + param1 + "/" + param2;
+            }
+
+            function multiply()
+            {
+                let param1 = $("#param1").val();
+                let param2 = $("#param2").val();
+                location.href = "mul1/" + param1 + "/" + param2;
+            }
+
+            function divide()
+            {
+                let param1 = $("#param1").val();
+                let param2 = $("#param2").val();
+                location.href = "div1/" + param1 + "/" + param2;
+            }
+        </script>
+        
+    </body>
+</html>
