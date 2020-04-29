@@ -1,0 +1,44 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>계산해보자</title>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <input id="num1">
+            <input id="num2">
+            <input type="radio" name="sign" value="plus">+
+            <input type="radio" name="sign" value="minus">-
+            <input type="radio" name="sign" value="multi">X
+            <input type="radio" name="sign" value="divide">/
+            <button onclick="calc()">계산</button>
+            <div id="response">결과</div>
+        </div>
+        <script>
+            async function calc(){
+                let num1 = $("#num1").val().trim();
+                let num2 = $("#num2").val().trim();
+
+                if (num1 === "" || num2 === "") {
+                    let response = "값을 모두 입력해주세요";
+                    $("#response").html(JSON.stringify(response));
+                    return;
+                }
+            
+                let sign;
+                let signs = document.getElementsByName("sign");
+
+                for(let i = 0; i < signs.length; i++){
+                    if(signs[i].checked == true){
+                        sign = signs[i].value;
+                        break;
+                    }
+                }
+
+                let response = await $.get("calculator/" + num1 + "/" + num2 + "/" + sign);
+                $("#response").html(JSON.stringify(response));
+            }
+        </script>
+    </body>
+</html>
