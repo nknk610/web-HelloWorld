@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     private List<User> userList;
 
+    //userList 초기화
     public UserServiceImpl()
     {
         userList = new ArrayList<User>();
@@ -17,12 +18,14 @@ public class UserServiceImpl implements UserService {
         userList.add(new User("user3", "경", "user333"));
     }
 
+    //userList 반환
     @Override
     public List<User> list() 
     {
         return userList;
     }
 
+    //id로 user 탐색
     @Override
     public User view(String id) 
     {
@@ -34,6 +37,7 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    //userList에 user 추가
     @Override
     public boolean add(User user) {
         User found = view(user.getId());
@@ -42,6 +46,7 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    //user 정보 변경
     @Override
     public User update(User user) {
         User found = view(user.getId());
@@ -53,6 +58,7 @@ public class UserServiceImpl implements UserService {
         return found;
     }
 
+    //user 정보 삭제
     @Override
     public boolean delete(String id) {
         User found = view(id);
