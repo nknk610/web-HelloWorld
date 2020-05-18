@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Domain;
 
 import java.time.LocalDateTime;
 
@@ -9,7 +9,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.Id;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,9 +20,28 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class User {
-    private String id;
+    @Id
+    @GeneratedValue
+    private Long id;
     private String name;
     private String email;
+    private String password;
+    @CreationTimestamp
+    private LocalDateTime joind;
+    @UpdateTimestamp
+    private LocalDateTime modified;
+    private String storedPath;
+    private String originalName;
+
+    public User(final String name, final String email, final String password, final String storedPath, final String originalName)
+    {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.storedPath = storedPath;
+        this.originalName = originalName;
+    }
+
+    
 }
