@@ -1,13 +1,8 @@
 package com.example.demo;
 
-import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
