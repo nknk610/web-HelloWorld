@@ -23,12 +23,12 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue
-    private Long id;
-    private String name;
+    private Long userId;
+    private String username;
     private String email;
     private String password;
     @CreationTimestamp
-    private LocalDateTime joind;
+    private LocalDateTime joined;
     @UpdateTimestamp
     private LocalDateTime modified;
     private String storedPath;
@@ -36,12 +36,10 @@ public class User {
 
     public User(final String name, final String email, final String password, final String storedPath, final String originalName)
     {
-        this.name = name;
+        this.username = name;
         this.email = email;
         this.password = password;
         this.storedPath = storedPath;
         this.originalName = originalName;
     }
-
-    
 }
