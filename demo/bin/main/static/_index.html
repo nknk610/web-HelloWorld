@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div>
+		<h1>회원가입</h1>
+		<form action="/user/add" method="post">
+
+			<div>
+				<span>username</span>
+				<input type="text" name="username">
+			</div>
+			<div>
+				<span>email</span>
+				<input type="text" name="email">
+			</div>
+			<div>
+				<span>password</span>
+				<input type="password" name="password">
+			</div>
+
+			<input type="submit" value="확인">
+			<input type="submit" value="취소">
+
+		</form>
+	</div>
+
+	<div>
+		<h1>로그인</h1>
+		<form action="/user/login" method="post">
+
+			<div>
+				<input type="text" placeholder="사용자 아이디">
+			</div>
+
+			<div>
+				<input type="password" placeholder="비밀번호">
+			</div>
+
+			<input type="submit" value="확인">
+			<input type="submit" value="취소">
+
+		</form>
+	</div>
+
+
+	<div>
+		<h1>댓글</h1>
+		<form action="/comment/add" method="post">
+			<div>
+				<span>comment</span>
+				<input type="text" style="width:500px">
+				<input type="submit" value="확인">
+			</div>
+		</form>
+
+	</div>
+
+
+
+	<div>
+		<h1>회원목록</h1>
+		<div>
+			<span>aaaa</span>
+			<span>aaa@dgsw</span>
+			<span>1234</span>
+			<span id="profileImage">person.png</span>
+			<input id="file" type="file" style="visibility: hidden" id="image">
+			<span id="aa">Test</span>
+
+			<button id="edit" onclick="aaaa()">수정</button>
+			<button id="upload" onclick="bbbb()" style="visibility: hidden">이미지 업로드</button>
+			
+			<button id="delete">삭제</button>
+			<button id="cancel" style="visibility: hidden" onclick="cccc()">취소</button>
+			
+
+			<button>이미지</button>
+		</div>
+	</div>
+	<hr>
+
+
+	<div>
+		<h1>댓글 목록</h1>
+		<div>
+			<span>test</span>
+			<span>content</span>
+			<button>수정</button>
+			<button>삭제</button>
+		</div>
+		<hr>
+		<div>
+			<span>guest</span>
+			<span>content</span>
+			<button>수정</button>
+			<button>삭제</button>
+		</div>
+		<hr>
+		<div>
+			<span>unknown</span>
+			<span>content</span>
+			<button>수정</button>
+			<button>삭제</button>
+		</div>
+		<hr>
+
+	</div>
+	
+	
+</body>
+
+</html>
