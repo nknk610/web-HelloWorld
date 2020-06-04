@@ -60,12 +60,12 @@ public class User {
 
     @CreationTimestamp
     @Column(updatable=false, nullable=false)
-    @JsonFormat(pattern="yyyy-mm-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime created;
 
     @UpdateTimestamp
     @Column(nullable=false)
-    @JsonFormat(pattern="yyyy-mm-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime modified;
 
     public User(String account, String password, String name, String email, String phone, String profilePath)

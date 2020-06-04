@@ -2,10 +2,10 @@ package com.example.demo.Domain;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.Id;
 
