@@ -16,11 +16,14 @@ import kr.hs.dgsw.blog.Protocol.ResponseFormat;
 import kr.hs.dgsw.blog.Protocol.ResponseType;
 import kr.hs.dgsw.blog.Service.PostService;
 
+//컨트롤러로 지정, PostService를 통한 기능들을 Mapping함
 @RestController
 public class PostController {
+    //PostController 안에 PostService의 의존성을 Bean으로 구성
     @Autowired
     private PostService postService;
 
+    //Post방식의 요청을 매핑, Request로 전달된 객체를 통해 Post를 찾아 인자로 할당
     @PostMapping("/post/create")
     public ResponseFormat create(@RequestBody Post post)
     {
@@ -41,6 +44,7 @@ public class PostController {
         }
     }
 
+    //Put방식의 요청을 매핑, id를 GET으로 받고 Post의 정보는 Request에서 전달된 객체로 받음
     @PutMapping("post/update/{id}")
     public ResponseFormat update(@PathVariable long id, @RequestBody Post post)
     {
@@ -61,6 +65,7 @@ public class PostController {
         }
     }
 
+    //Delete의 기능을 매핑, 게시물의 id만 GET으로 받아서 처리
     @DeleteMapping("/post/delete/{id}")
     public ResponseFormat delete(@PathVariable long id)
     {
@@ -81,6 +86,7 @@ public class PostController {
         }
     }
 
+    //단순한 GET방식의 처리, id값을 통해 게시물을 탐색
     @GetMapping("/post/read/{id}")
     public ResponseFormat read(@PathVariable long id)
     {
@@ -101,6 +107,7 @@ public class PostController {
         }
     }
 
+    //GET방식의 요청, 유저Id에 맞는 게시물 리스트 중 하나를 반환
     @GetMapping("/post/read/user/{userId}")
     public ResponseFormat readByUserId(@PathVariable long userId)
     {
@@ -121,6 +128,7 @@ public class PostController {
         }
     }
 
+    //GET방식의 요청, 모든 게시물을 가져옴
     @GetMapping("/post/read")
     public ResponseFormat readAll()
     {
